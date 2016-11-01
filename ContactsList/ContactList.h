@@ -15,6 +15,8 @@
 
 -(instancetype)init;
 
+-(void)printList;
+
 -(void)addContact:(Contact *)newContact;
 
 @end

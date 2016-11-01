@@ -20,6 +20,13 @@
 }
 
 
+-(void)printList{
+    for (Contact *c in _ConListing){
+        NSLog(@"%@", c.name);
+        
+    }
+}
+
 -(void)addContact:(Contact *)newContact{
     [_ConListing addObject:newContact];
 }

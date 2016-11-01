@@ -18,10 +18,15 @@ int main(int argc, const char * argv[]) {
         ContactList *ConList = [[ContactList alloc]init];
         
         InputCollector *iC = [[InputCollector alloc]init];
-        NSString *userInput = [iC inputForPrompt:menu];
         
         while(TRUE){
-            if([userInput isEqualToString:@"new"]){
+            NSString *userInput = [iC inputForPrompt:menu];
+            
+            if([userInput isEqualToString:@"quit"]){
+                NSLog(@"I bid you a fucking Adieu!");
+                break;
+
+            }if([userInput isEqualToString:@"new"]){
                 NSString *ConName = [iC inputForPrompt:@"Give me a name for the Contact please: "];
                 NSString *ConEmail = [iC inputForPrompt:@"Now I need their email address: "];
                 
@@ -29,13 +34,7 @@ int main(int argc, const char * argv[]) {
                 [ConList addContact:new];
                 
             }if([userInput isEqualToString:@"list"]){
-                
-                
-            }if([userInput isEqualToString:@"quit"]){
-                NSLog(@"I bid you a fucking Adieu!");
-                break;
-            }else{
-                NSLog(@"I bid you a fucking Adieu!");
+                [ConList printList];
             }
             
         }

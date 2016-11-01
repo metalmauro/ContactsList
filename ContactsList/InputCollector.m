@@ -14,6 +14,7 @@
     
     NSLog(@"%@", promptString);
     char input[255];
+    fgets(input, 255, stdin);
     NSCharacterSet *hb = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *final = [[NSString stringWithCString:input encoding:NSUTF8StringEncoding] stringByTrimmingCharactersInSet: hb];
     
